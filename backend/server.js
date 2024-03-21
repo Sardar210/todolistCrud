@@ -96,7 +96,7 @@ app.listen(1001, () => {
 })
 
 mongoose.set('strictQuery', false)
-mongoose.connect('mongodb+srv://admin:12345admin@arslan.zvrxr00.mongodb.net/node-api?retryWrites=true&w=majority')
+mongoose.connect('Enter your Mongoose address here')
 .then(() => {
     console.log('Connected to MongoDB')
 }).catch(()=> {

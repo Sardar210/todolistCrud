@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import DataList from "./DataList";
+import {Link} from "react-router-dom"
 import {
   MDBContainer,
   MDBInput,
@@ -94,7 +95,7 @@ function LogIn() {
 
         <div className="text-center">
           <p>
-            Not a member? <a href="#!">Register</a>
+            Not a member? <Link to ="./signup"> Register </Link>
           </p>
 
           <div

@@ -4,6 +4,7 @@ import DataList from './components/DataList';
 import EditList from './components/EditList';
 import GetUserData from './components/GetUserData';
 import Navbar from './components/Navbar';
+import Signup from './components/Signup';
 
 import {
   BrowserRouter,
@@ -17,6 +18,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<LogIn/>}/>
+        <Route path='/signup' element={<Signup/>}/>
         <Route path='/datalist' element={<DataList/>}/>
         <Route path='/home' element={<Navbar/>}/>
         <Route path='/getuserdata' element={<GetUserData/>}/>

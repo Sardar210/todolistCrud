@@ -91,12 +91,12 @@ app.delete('/workList/:id', async(req, res) => {
     }
 })
 
-app.listen(1001, () => {
+app.listen(1002, () => {
     console.log("Server is running on port 1001");
 })
 
 mongoose.set('strictQuery', false)
-mongoose.connect('Enter your Mongoose address here')
+mongoose.connect('mongodb+srv://admin:12345admin@arslan.zvrxr00.mongodb.net/node-api?retryWrites=true&w=majority')
 .then(() => {
     console.log('Connected to MongoDB')
 }).catch(()=> {

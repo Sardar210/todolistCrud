@@ -20,7 +20,7 @@ function App() {
         <Route path='/datalist' element={<DataList/>}/>
         <Route path='/home' element={<Navbar/>}/>
         <Route path='/getuserdata' element={<GetUserData/>}/>
-        <Route path='/editlist/' element = {<EditList/>}/>
+        <Route path='/editlist/:id' element = {<EditList/>}/>
         </Routes>
     </BrowserRouter>
     

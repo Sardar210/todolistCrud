@@ -15,9 +15,9 @@ export default function DataList() {
       fetchWorkList();  
      }
 
-     useEffect(() => {
-        fetchWorkList();
-     }, []);
+    //  useEffect(() => {
+    //     fetchWorkList();
+    //  }, []);
 
      const fetchWorkList = async () => {
       try {
@@ -29,6 +29,7 @@ export default function DataList() {
     };
 
      useEffect (() => {
+      fetchWorkList();
      }, [dataListForm])
 
      return (

@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import DataList from "./DataList";
-
 import {
   MDBContainer,
   MDBInput,
@@ -58,7 +57,7 @@ function LogIn() {
   return (
     <>
       {/* <LogIn logOutFunction = {handleLogout}/> */}
-      <h2 className="text-center"> Sign In </h2>
+      <h2 className="text-center mt-3 mb-3"> Sign In </h2>
       <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
         <MDBInput
           wrapperClass="mb-4"

@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
   import { useParams, useNavigate } from "react-router-dom";
-
-import axios from "axios";
+  import ApiService from "./Services";
+  import Navbar from "./Navbar";
+  import {
+    MDBContainer
+  } from "mdb-react-ui-kit";
 
 function EditList() {
 
@@ -24,34 +27,40 @@ function EditList() {
     console.log(userForm);
     
   };
-  const onUpdate = (e) => {
+
+  const onUpdate = async (e) => {
     e.preventDefault();
-    axios
-      .put("http://localhost:4000/students/update-student/" + params.id, {
+    debugger
+    const result = await ApiService.updateWorkListById( params.id, {
         name: userForm.name,
-        email: userForm.email,
-        rollno: userForm.rollno,
+        day: userForm.day,
+        work: userForm.work,
       })
       .then((res) => {
         console.log({ status: res.status });
-        navigate("/student-list");  
-      });
+        navigate("/datalist");  
+      })
+      console.log('Data updated Successfully', result);
   };
 
   useEffect(() => {
-    axios
-      .get("http://localhost:4000/students/get-student/" + params.id)
+    
+    const getData = ApiService.getWorkListById(params.id)
       .then((res) => {
         setUserForm({
-          name: res.data.data.name,
-          day: res.data.data.day,
-          work: res.data.data.work,
-        });
+          name: res.name,
+          day: res.day,
+          work: res.work,
+        })
+        console.log('Data get succesfully', getData);
       });
   }, [params.id]);
 
   return (
     <div>
+      <Navbar/>  
+       <h2 className="text-center mt-3 mb-3"> User Update Form </h2>
+      <MDBContainer className="d-flex flex-column w-50">
       <div className="form-wrapper">
         <form onSubmit={onUpdate}>
           <div className="mb-3">
@@ -70,8 +79,8 @@ function EditList() {
             <input
               type="text"
               className="form-control"
-              name="email"
-              id="email"
+              name="day"
+              id="day"
               value={userForm.day}
               onChange={inputsHandler}
             />
@@ -81,8 +90,8 @@ function EditList() {
             <input
               type="text"
               className="form-control"
-              name="rollno"
-              id="rollno"
+              name="work"
+              id="work"
               value={userForm.work}
               onChange={inputsHandler}
             />
@@ -94,6 +103,7 @@ function EditList() {
           </div>
         </form>
       </div>
+      </MDBContainer>
     </div>
   );
 }

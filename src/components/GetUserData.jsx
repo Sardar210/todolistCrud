@@ -45,8 +45,8 @@ export default function Getuserdata() {
   return (
     <>
     <Navbar/>
-    <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
-      <h2 className="text-center"> User Data Form </h2>
+    <h2 className="text-center mt-3 mb-3"> User Data Form </h2>
+    <MDBContainer className="d-flex flex-column w-50">
       <MDBInput
         wrapperClass="mb-4"
         label="Name"
